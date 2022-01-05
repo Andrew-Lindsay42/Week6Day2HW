@@ -85,4 +85,9 @@ describe('Park', function() {
     assert.deepStrictEqual(actual, [t_rex, stegosaurus]);
   });
 
+  it('should be able to get diet types of the dinosaurs', function (){
+    const actual = park.getDiets();
+    assert.deepStrictEqual(actual, {'carnivore': 2, 'herbivore': 1, 'omnivore': 0});
+  });
+
 });

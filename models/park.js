@@ -65,4 +65,12 @@ Park.prototype.makeExtinct = function (species){
     this.dinosaurs = alive_dinos;
 }
 
+Park.prototype.getDiets = function (){
+    let diets = {'carnivore': 0, 'herbivore': 0, 'omnivore': 0};
+    for (let dino of this.dinosaurs){
+        diets[dino.diet]++;
+    };
+    return diets;
+};
+
 module.exports = Park;
