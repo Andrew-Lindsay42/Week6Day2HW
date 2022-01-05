@@ -76,4 +76,13 @@ describe('Park', function() {
     assert.strictEqual(actual, 401500);
   });
 
+  it('should be able to remove all dinosaurs of a particular species', function (){
+    const velociraptor2 = new Dinosaur('Velociraptor', 'carnivore', 30);
+    park.addDino(velociraptor2);
+
+    park.makeExtinct('Velociraptor');
+    const actual = park.dinosaurs;
+    assert.deepStrictEqual(actual, [t_rex, stegosaurus]);
+  });
+
 });

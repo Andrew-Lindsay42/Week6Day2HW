@@ -55,4 +55,14 @@ Park.prototype.yearRevenue = function (){
     return revenue;
 }
 
+Park.prototype.makeExtinct = function (species){
+    let alive_dinos = [];
+    for (let dino of this.dinosaurs){
+        if (dino.species !== species) {
+            alive_dinos.push(dino);
+        };
+    };
+    this.dinosaurs = alive_dinos;
+}
+
 module.exports = Park;
