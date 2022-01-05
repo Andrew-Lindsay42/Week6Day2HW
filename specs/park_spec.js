@@ -4,11 +4,16 @@ const Dinosaur = require('../models/dinosaur.js');
 
 describe('Park', function() {
 
+    let t_rex;
+    let stegosaurus;
+    let velociraptor;
+    let park;
+
   beforeEach(function () {
-    const t_rex = new Dinosaur('T-Rex', 'carnivore', 50);
-    const stegosaurus = new Dinosaur('Stegosaurus', 'herbivore', 25);
-    const velociraptor = new Dinosaur('Velociraptor', 'carnivore', 35);
-    const park = new Park('Jurassic Park', 10, [t_rex, stegosaurus, velociraptor]);
+    t_rex = new Dinosaur('T-Rex', 'carnivore', 50);
+    stegosaurus = new Dinosaur('Stegosaurus', 'herbivore', 25);
+    velociraptor = new Dinosaur('Velociraptor', 'carnivore', 35);
+    park = new Park('Jurassic Park', 10, [t_rex, stegosaurus, velociraptor]);
   });
 
   it('should have a name', function(){
