@@ -37,4 +37,22 @@ Park.prototype.findDinos = function (species){
     return dinos;
 };
 
+Park.prototype.visitorsPerDay = function (){
+    let visitors = 0;
+    for (let dino of this.dinosaurs){
+        visitors += dino.guestsAttractedPerDay;
+    };
+    return visitors;
+};
+
+Park.prototype.visitorsPerYear = function (){
+    let visitors = this.visitorsPerDay() * 365;
+    return visitors;
+};
+
+Park.prototype.yearRevenue = function (){
+    let revenue = this.visitorsPerYear() * this.ticketPrice;
+    return revenue;
+}
+
 module.exports = Park;
