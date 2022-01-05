@@ -46,7 +46,7 @@ describe('Park', function() {
 
   it('should be able to find the dinosaur that attracts the most visitors', function (){
     const actual = park.coolestDino();
-    assert.strictEqual(actual, t_rex);
+    assert.deepStrictEqual(actual, t_rex);
   });
 
   it('should be able to find all dinosaurs of a particular species', function (){
@@ -57,7 +57,7 @@ describe('Park', function() {
     park.addDino(velociraptor3);
     park.addDino(velociraptor4);
 
-    const actual = park.findDinos('Velocripator');
+    const actual = park.findDinos('Velociraptor');
     assert.deepStrictEqual(actual, [velociraptor, velociraptor2, velociraptor3, velociraptor4])
   });
 
